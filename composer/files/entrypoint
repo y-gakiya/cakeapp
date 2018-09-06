@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eux
+
+for dir in ./* ; do
+    if [[ -d "$dir" ]]; then
+        echo "processing $dir"
+        cd $dir
+        composer ${COMMAND}
+        cd ../
+    fi
+done

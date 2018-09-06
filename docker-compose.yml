@@ -1,0 +1,43 @@
+version: "3"
+services:
+
+  php:
+    build:
+      context: ./php
+    volumes:
+      - ./lib:/var/www/html/lib
+      - ./app:/var/www/html/app
+    ports:
+      - 80:80
+    networks:
+      default:
+
+  db:
+    image: mysql
+    volumes:
+      - ./mysql/initdb:/docker-entrypoint-initdb.d
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: passpass
+      MYSQL_DATABASE: cakeapp
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    networks:
+      default:
+        aliases:
+          - database
+
+  composer:
+    build:
+      context: ./composer
+    environment:
+      COMMAND: install
+    volumes:
+      - ./lib:/app/Vendor
+      - ./composer/files/entrypoint:/entrypoint
+
+networks:
+  default:
+
+volumes:
+  db-data:
