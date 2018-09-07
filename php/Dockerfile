@@ -1,6 +1,10 @@
 FROM php:7.2-apache
 
-RUN docker-php-ext-install pdo_mysql
+RUN apt-get update  \
+    && apt-get install -y libicu-dev \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install intl
+
 
 RUN cd /etc/apache2/mods-enabled/ && \
     ln -s ../mods-available/rewrite.load rewrite.load
