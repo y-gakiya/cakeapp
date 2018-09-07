@@ -4,6 +4,8 @@
  * @package       app.Config
  * @since         CakePHP(tm) v 0.2.9
  */
+namespace Config;
+
 
 /**
  * Database configuration class.
