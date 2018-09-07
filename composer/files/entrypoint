@@ -5,7 +5,7 @@ for dir in ./* ; do
     if [[ -d "$dir" ]]; then
         echo "processing $dir"
         cd $dir
-        composer ${COMMAND}
+        composer ${COMMAND} --ignore-platform-reqs --no-scripts
         cd ../
     fi
 done
