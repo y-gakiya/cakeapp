@@ -1,10 +1,10 @@
 {
   "name": "cakeapp",
   "require": {
-    "cakephp/cakephp": ">=2.10.12,<3.0.0"
+    "cakephp/cakephp": "^3.6"
   },
   "require-dev": {
-    "cakephp/debug_kit" : ">=2.2.4,<3.0.0"
+    "cakephp/debug_kit" : "~3.0"
   },
   "config": {
     "vendor-dir": "Vendor/"
