@@ -33,7 +33,7 @@ services:
     environment:
       COMMAND: update
     volumes:
-      - ./lib:/app/Vendor
+      - ./app:/app/app
       - ./composer/files/entrypoint:/entrypoint
 
 networks:
