@@ -31,7 +31,7 @@ services:
     build:
       context: ./composer
     environment:
-      COMMAND: update
+      COMMAND: install
     volumes:
       - ./app:/app/app
       - ./composer/files/entrypoint:/entrypoint
