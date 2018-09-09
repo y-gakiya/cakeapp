@@ -1,8 +1,12 @@
 root = true
 [*]
+indent_style = tab
 end_of_line = lf
 insert_final_newline = true
 
 [*.php]
-indent_style = tab
 indent_size = 4
+
+[*.ctp]
+indent_style = tab
+indent_size = 2
